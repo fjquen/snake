@@ -1,7 +1,7 @@
 class Snake
     def initialize()
         @snakePosition = {"x" => 50, "y" => 50,"w" => 50,"h" => 50}
-        @snakeTail = [{"x" => @snakePosition["x"], "y" => @snakePosition["y"],"w" => 50,"h" => 50}]
+        @snakeTail = []
         @listObservers = []
     end
 
