@@ -49,7 +49,6 @@ class GameScreen < Gosu::Window
             when Gosu::KB_RIGHT
                 @controlSnake.executeRight()
                 @direction = :executeRight
-                @getPositionSnake.positionTailSnake.push(@getPositionSnake.positionSnake)
             when Gosu::KB_LEFT
                 @controlSnake.executeLeft()
                 @direction = :executeLeft
@@ -64,10 +63,10 @@ class GameScreen < Gosu::Window
 
     def draw 
         Gosu.draw_rect(@getPositionSnake.positionSnake["x"], @getPositionSnake.positionSnake["y"], @getPositionSnake.positionSnake["w"], @getPositionSnake.positionSnake["h"],Gosu::Color::RED)
-        if !@getPositionSnake.positionTailSnake.empty?()
-            @getPositionSnake.positionTailSnake.each do |tail|
-                Gosu.draw_rect(tail["x"], tail["y"], tail["w"], tail["h"],Gosu::Color::BLUE)
-            end
-        end
+        # if !@getPositionSnake.positionTailSnake.empty?()
+        #     @getPositionSnake.positionTailSnake.each do |tail|
+        #         Gosu.draw_rect(tail["x"], tail["y"], tail["w"], tail["h"],Gosu::Color::BLUE)
+        #     end
+        # end
     end
 end
