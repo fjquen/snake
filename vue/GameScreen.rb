@@ -28,16 +28,12 @@ class GameScreen < Gosu::Window
     def button_down(id)
         case id
             when Gosu::KB_RIGHT
-                @controlSnake.executeRight()
                 @direction = :executeRight
             when Gosu::KB_LEFT
-                @controlSnake.executeLeft()
                 @direction = :executeLeft
             when Gosu::KB_UP
-                @controlSnake.executeUp()
                 @direction = :executeUp
             when Gosu::KB_DOWN
-                @controlSnake.executeDown()
                 @direction = :executeDown
         end
     end
