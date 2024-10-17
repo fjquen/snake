@@ -23,25 +23,7 @@ class GameScreen < Gosu::Window
             @controlSnake.send(@direction)
         end
         
-        # if @getPositionSnake.positionTailSnake[0]["x"] < @getPositionSnake.positionSnake["x"] and @ranDirection == :executeRight
-        #     @getPositionSnake.positionTailSnake[0]["x"]+=4
-        # elsif @getPositionSnake.positionTailSnake[0]["x"] > @getPositionSnake.positionSnake["x"] and @ranDirection == :executeLeft
-        #     @getPositionSnake.positionTailSnake[0]["x"]-=4
-        # elsif @getPositionSnake.positionTailSnake[0]["y"] > @getPositionSnake.positionSnake["y"] and @ranDirection == :executeUp
-        #     @getPositionSnake.positionTailSnake[0]["y"]-=4
-        # elsif @getPositionSnake.positionTailSnake[0]["y"] < @getPositionSnake.positionSnake["y"] and @ranDirection == :executeDown
-        #     @getPositionSnake.positionTailSnake[0]["y"]+=4
-        # end
-
-        # if @getPositionSnake.positionTailSnake[0]["x"] < @getPositionSnake.positionSnake["x"] and @direction == :executeRight
-        #     @getPositionSnake.positionTailSnake[0]["x"]+=4
-        # elsif @getPositionSnake.positionTailSnake[0]["x"] > @getPositionSnake.positionSnake["x"] and @direction == :executeLeft
-        #     @getPositionSnake.positionTailSnake[0]["x"]-=4
-        # elsif @getPositionSnake.positionTailSnake[0]["y"] > @getPositionSnake.positionSnake["y"] and @direction == :executeUp
-        #     @getPositionSnake.positionTailSnake[0]["y"]-=4
-        # elsif @getPositionSnake.positionTailSnake[0]["y"] < @getPositionSnake.positionSnake["y"] and @direction == :executeDown
-        #     @getPositionSnake.positionTailSnake[0]["y"]+=4
-        # end
+        
     end
 
     def button_down(id)
@@ -63,10 +45,5 @@ class GameScreen < Gosu::Window
 
     def draw 
         Gosu.draw_rect(@getPositionSnake.positionSnake["x"], @getPositionSnake.positionSnake["y"], @getPositionSnake.positionSnake["w"], @getPositionSnake.positionSnake["h"],Gosu::Color::RED)
-        # if !@getPositionSnake.positionTailSnake.empty?()
-        #     @getPositionSnake.positionTailSnake.each do |tail|
-        #         Gosu.draw_rect(tail["x"], tail["y"], tail["w"], tail["h"],Gosu::Color::BLUE)
-        #     end
-        # end
     end
 end
