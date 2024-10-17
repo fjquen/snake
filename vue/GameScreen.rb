@@ -11,9 +11,8 @@ class GameScreen < Gosu::Window
         @direction
     end
  
-    def updatePosition(positionSnake,positionTail)
+    def updatePosition(positionSnake)
         @getPositionSnake.positionSnake = positionSnake
-        @getPositionSnake.positionTailSnake = positionTail
     end
 
     def update

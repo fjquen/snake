@@ -15,7 +15,7 @@ class Snake
 
     def notify
         @listObservers.each do |observer|
-          observer.updatePosition(@snakePosition,@snakeTail)
+          observer.updatePosition(@snakePosition)
         end
     end
 
