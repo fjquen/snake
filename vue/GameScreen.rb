@@ -5,6 +5,7 @@ class GameScreen < Gosu::Window
     def initialize
         super 640,480,false
         @controlSnake = ControlSnake.new()
+        @controlFood = ControlFood.new()
         @getPositionSnake = MoveSave
         @tabMoveSnake = ControlSnake.instance_methods(false).select { |function|  function != :updatePosition  }
         @ranDirection = @tabMoveSnake[rand(0..@tabMoveSnake.length-1)]

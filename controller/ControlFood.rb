@@ -6,4 +6,6 @@ class ControlFood
     def updatePosition(positionFood)
         @getPositionFood.positionFood = positionFood
     end
+
+
 end
