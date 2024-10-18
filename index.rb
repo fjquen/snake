@@ -11,6 +11,10 @@
       require namePathRelative
     }
     
+    food = Food.new()
+    food.subscribe(ControlFood.new())
+    food.subscribe(GameScreen.new())
+    food.notify
     snake = Snake.new()
     snake.subscribe(ControlSnake.new())
     snake.subscribe(GameScreen.new())

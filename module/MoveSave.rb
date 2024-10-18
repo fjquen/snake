@@ -1,9 +1,18 @@
 module MoveSave
-    def self.positionSnake=(positionHeadSnake)
-        @positionHeadSnake = positionHeadSnake
+    def self.positionSnake=(positionSnake)
+        @positionSnake = positionSnake
     end
 
     def self.positionSnake
-        @positionHeadSnake
+        @positionSnake
+    end
+
+
+    def self.positionFood=(positionFood)
+        @positionFood = positionFood
+    end
+
+    def self.positionFood
+        @positionFood
     end
 end
