@@ -6,14 +6,18 @@ class GameScreen < Gosu::Window
         super 640,480,false
         @controlSnake = ControlSnake.new()
         @controlFood = ControlFood.new()
-        @getPositionSnake = MoveSave
+        @getMove = MoveSave
         @tabMoveSnake = ControlSnake.instance_methods(false).select { |function|  function != :updatePosition  }
         @ranDirection = @tabMoveSnake[rand(0..@tabMoveSnake.length-1)]
         @direction
     end
  
     def updatePosition(positionSnake)
-        @getPositionSnake.positionSnake = positionSnake
+        @getMove.positionSnake = positionSnake
+    end
+
+    def updatePositionFood(positionFood)
+        @getMove.positionFood = positionFood
     end
 
     def update
@@ -22,7 +26,8 @@ class GameScreen < Gosu::Window
         else
             @controlSnake.send(@direction)
         end
-        
+
+        @getMove.positionFood.push({"x" => rand(0..640), "y" => rand(0..480),"w" => 10,"h" => 10})
         
     end
 
@@ -40,6 +45,7 @@ class GameScreen < Gosu::Window
     end
 
     def draw 
-        Gosu.draw_rect(@getPositionSnake.positionSnake["x"], @getPositionSnake.positionSnake["y"], @getPositionSnake.positionSnake["w"], @getPositionSnake.positionSnake["h"],Gosu::Color::RED)
+        Gosu.draw_rect(@getMove.positionSnake["x"], @getMove.positionSnake["y"], @getMove.positionSnake["w"], @getMove.positionSnake["h"],Gosu::Color::RED)
+        @getMove.positionFood.each { |n| Gosu.draw_rect(n["x"], n["y"], n["w"], n["h"],Gosu::Color::BLUE) }
     end
 end

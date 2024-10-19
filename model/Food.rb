@@ -1,6 +1,6 @@
 class Food
     def initialize()
-        @foodPosition = []
+        @foodPosition = Array.new
         @listObservers = []
     end
 
@@ -15,7 +15,7 @@ class Food
 
     def notify
         @listObservers.each do |observer|
-          observer.updatePosition(@foodPosition)
+          observer.updatePositionFood(@foodPosition)
         end
     end
 

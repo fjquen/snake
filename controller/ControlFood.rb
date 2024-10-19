@@ -3,7 +3,7 @@ class ControlFood
         @getPositionFood = MoveSave
     end
 
-    def updatePosition(positionFood)
+    def updatePositionFood(positionFood)
         @getPositionFood.positionFood = positionFood
     end
 

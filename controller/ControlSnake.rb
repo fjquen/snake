@@ -1,27 +1,27 @@
 class ControlSnake
     def initialize
-        @getPositionSnake = MoveSave
+        @getMove = MoveSave
     end
 
     def updatePosition(positionSnake)
-        @getPositionSnake.positionSnake = positionSnake
+        @getMove.positionSnake = positionSnake
     end
 
 
     def executeRight
-        @getPositionSnake.positionSnake["x"]+=4
+        @getMove.positionSnake["x"]+=4
     end
 
 
     def executeLeft
-        @getPositionSnake.positionSnake["x"]-=4
+        @getMove.positionSnake["x"]-=4
     end
 
     def executeUp
-        @getPositionSnake.positionSnake["y"]-=4
+        @getMove.positionSnake["y"]-=4
     end
 
     def executeDown
-        @getPositionSnake.positionSnake["y"]+=4
+        @getMove.positionSnake["y"]+=4
     end
 end
