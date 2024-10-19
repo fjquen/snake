@@ -27,8 +27,12 @@ class GameScreen < Gosu::Window
             @controlSnake.send(@direction)
         end
 
-        @getMove.positionFood.push({"x" => rand(0..640), "y" => rand(0..480),"w" => 10,"h" => 10})
+        if @getMove.positionFood.size<25
+          @getMove.positionFood.push({"x" => rand(0..640), "y" => rand(0..480),"w" => 10,"h" => 10})
+        end
         
+
+        @getMove.positionFood.reject! { |star| Gosu.distance(@getMove.positionSnake["x"], @getMove.positionSnake["y"], star["x"], star["y"]) < 40 }
     end
 
     def button_down(id)
