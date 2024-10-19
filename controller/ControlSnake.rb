@@ -29,8 +29,8 @@ class ControlSnake
     def eat(array,player)
         array.reject! do |food|
             if Gosu.distance(player["x"], player["y"], food["x"], food["y"]) < 35
-              score = 0
-              score+=10
+              score = []
+              score.push(player)
               puts score
               true
             else
