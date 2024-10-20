@@ -4,8 +4,9 @@ class ControlSnake
         
     end
 
-    def updatePosition(positionSnake)
+    def updatePosition(positionSnake, positionSegment)
         @getMove.positionSnake = positionSnake
+        @getMove.positionSegment = positionSegment
     end
 
 
@@ -29,9 +30,7 @@ class ControlSnake
     def eat(array,player)
         array.reject! do |food|
             if Gosu.distance(player["x"], player["y"], food["x"], food["y"]) < 35
-              score = []
-              score.push(player)
-              puts score
+             @getMove.positionSegment.push(player)
               true
             else
               false

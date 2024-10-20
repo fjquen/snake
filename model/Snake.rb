@@ -1,6 +1,7 @@
 class Snake
     def initialize()
         @snakePosition = {"x" => 50, "y" => 50,"w" => 50,"h" => 50}
+        @snakeSegment = []
         @listObservers = []
     end
 
@@ -15,11 +16,15 @@ class Snake
 
     def notify
         @listObservers.each do |observer|
-          observer.updatePosition(@snakePosition)
+          observer.updatePosition(@snakePosition,@snakeSegment)
         end
     end
 
     def snakePosition
         return @snakePosition
+    end
+
+    def snakeSegment
+        return @snakeSegment
     end
 end

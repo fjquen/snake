@@ -15,4 +15,13 @@ module MoveSave
     def self.positionFood
         @positionFood
     end
+
+
+    def self.positionSegment=(positionSegment)
+        @positionSegment = positionSegment
+    end
+
+    def self.positionSegment
+        @positionSegment
+    end
 end

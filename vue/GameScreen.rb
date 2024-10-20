@@ -12,8 +12,9 @@ class GameScreen < Gosu::Window
         @direction
     end
  
-    def updatePosition(positionSnake)
+    def updatePosition(positionSnake, positionSegment)
         @getMove.positionSnake = positionSnake
+        @getMove.positionSegment = positionSegment
     end
 
     def updatePositionFood(positionFood)
@@ -31,7 +32,11 @@ class GameScreen < Gosu::Window
           @getMove.positionFood.push({"x" => rand(0..640), "y" => rand(0..480),"w" => 30,"h" => 30})
         end
 
-        @controlSnake.eat(@getMove.positionFood,@getMove.positionSnake)
+
+        
+        
+          @controlSnake.eat(@getMove.positionFood,@getMove.positionSnake)
+
     end
 
     def button_down(id)
@@ -50,5 +55,10 @@ class GameScreen < Gosu::Window
     def draw 
         Gosu.draw_rect(@getMove.positionSnake["x"], @getMove.positionSnake["y"], @getMove.positionSnake["w"], @getMove.positionSnake["h"],Gosu::Color::RED)
         @getMove.positionFood.each { |n| Gosu.draw_rect(n["x"], n["y"], n["w"], n["h"],Gosu::Color::BLUE) }
+        if !@getMove.positionSegment.empty?
+            @getMove.positionSegment.each { |n| 
+                 Gosu.draw_rect(n["x"], n["y"], n["w"], n["h"],Gosu::Color::GREEN)
+            }
+        end
     end
 end
