@@ -27,7 +27,7 @@ class ControlSnake
         @getMove.positionSnake["y"]+=4
     end
 
-    def eat(array,player)
+    def eat(array=[],player={})
         array.reject! do |food|
             if Gosu.distance(player["x"], player["y"], food["x"], food["y"]) < 35
              @getMove.positionSegment.push(player)

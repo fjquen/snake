@@ -18,8 +18,4 @@ class Food
           observer.updatePositionFood(@foodPosition)
         end
     end
-
-    def foodPosition
-        return @foodPosition
-    end
 end

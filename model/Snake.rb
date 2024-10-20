@@ -19,12 +19,4 @@ class Snake
           observer.updatePosition(@snakePosition,@snakeSegment)
         end
     end
-
-    def snakePosition
-        return @snakePosition
-    end
-
-    def snakeSegment
-        return @snakeSegment
-    end
 end

@@ -7,7 +7,7 @@ class GameScreen < Gosu::Window
         @controlSnake = ControlSnake.new()
         @controlFood = ControlFood.new()
         @getMove = MoveSave
-        @tabMoveSnake = ControlSnake.instance_methods(false).select { |function|  function != :updatePosition  }
+        @tabMoveSnake = ControlSnake.instance_methods(false).select { |function|  function != :updatePosition and function != :eat  }
         @ranDirection = @tabMoveSnake[rand(0..@tabMoveSnake.length-1)]
         @direction
     end
@@ -32,11 +32,7 @@ class GameScreen < Gosu::Window
           @getMove.positionFood.push({"x" => rand(0..640), "y" => rand(0..480),"w" => 30,"h" => 30})
         end
 
-
-        
-        
-          @controlSnake.eat(@getMove.positionFood,@getMove.positionSnake)
-
+        @controlSnake.eat(@getMove.positionFood,@getMove.positionSnake)
     end
 
     def button_down(id)
